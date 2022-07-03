@@ -1,20 +1,38 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+// C++ program to demonstrate the use
+// of return 0 and return 1 inside
+// user-defined function
 #include <iostream>
+using namespace std;
 
-int main()
+// Utility function returning 1 or
+// 0 based on given age
+int checkAdultUtil(int age)
 {
-    std::cout << "Hello World!\n";
+	if (age >= 18)
+		return 1;
+	else
+		return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+// Function to check for age
+void checkAdult(int age)
+{
+	// Checking on the basis
+	// of given age
+	if (checkAdultUtil(age))
+		cout << "You are an adult\n";
+	else
+		cout << "You are not an adult\n";
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+// Driver Code
+int main()
+{
+	// Given age
+	int age = 25;
+
+	// Function Call
+	checkAdult(age);
+
+	return 0;
+}
